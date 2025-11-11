@@ -33,7 +33,7 @@ func repel():
 			enemy.repel(impulse)
 
 func update_cooldown_visual():
-	update() # Redraw the node
+	queue_redraw() # Request a redraw
 
 func _draw():
 	if !can_repel:

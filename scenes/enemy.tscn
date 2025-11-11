@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6wl0pk6r5vkh"]
+[gd_scene load_steps=4 format=3 uid="uid://b6wl0pk6r5vkh"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_x0y1j"]
+[ext_resource type="Texture2D" uid="uid://ccv56yr55b5a2" path="res://icon.svg" id="2_abcde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y2x2"]
 size = Vector2(32, 32)
@@ -14,7 +15,7 @@ shape = SubResource("RectangleShape2D_1y2x2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1) # Red color
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("res://icon.svg")
+texture = ExtResource("2_abcde")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 rect = Rect2(-16, -16, 32, 32)
