@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://b6wl0pk6r5vkh"]
+[gd_scene load_steps=3 format=3 uid="uid://b6wl0pk6r5vkh"]
 
-[node name="Enemy" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_x0y1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y2x2"]
+size = Vector2(32, 32)
+
+[node name="Enemy" type="RigidBody2D"]
+script = ExtResource("1_x0y1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1y2x2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1) # Red color
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("res://icon.svg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-16, -16, 32, 32)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
